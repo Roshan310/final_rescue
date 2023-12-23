@@ -1,0 +1,22 @@
+from fastapi.security import OAuth2PasswordRequestForm
+from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.orm import Session
+from ..database import get_db
+from .. import models, oauth2
+from ..hashing import verify_password
+
+router = APIRouter()
+
+@router.post('/login')
+def login(user_credential: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+    user = db.query(models.User).filter(models.User.email == user_credential.username).first()
+ 
+    if not user:
+        return HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Not found")
+    if not verify_password(user_credential.password, user.password):
+        return HTTPException(status_code=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION, detail="Invalid credentials")
+    
+    access_token = oauth2.create_token(data={'user_id': user.id})
+    return {"access_token": access_token, "token_type": "bearer"}
+
+
