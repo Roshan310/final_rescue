@@ -20,6 +20,14 @@ const Navbar = () => {
             </span>
           </button>
         </Link>
+        <Link to="/about">
+          {" "}
+          <button>
+            <span className="bg-blue-500 hover:bg-blue-700 text-2xl text-rose-50 font-extrabold px-8 rounded">
+              About
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   );

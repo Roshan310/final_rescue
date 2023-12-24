@@ -5,6 +5,7 @@ import Login from "../Login/Login";
 import Register from "../Login/Register";
 import Cards from "../Card/Cards";
 import LocationComponent from "../Location/LocationComponent";
+import About from "../About/About"
 // import Map from "../Map/Map";
 
 
@@ -19,6 +20,7 @@ const Router = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/cards" element={<Cards />} />
         <Route path="/location" element={<LocationComponent />} />
+        <Route path="/about" element={<About />} />
         {/* <Route path= "/map" element={<Map/>}/> */}
       </Routes>
     </div>
