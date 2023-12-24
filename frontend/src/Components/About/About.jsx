@@ -2,11 +2,11 @@ import React from 'react'
 
 function About() {
   return (
-    <div className="w-[1180px] mx-auto">
+    <div className="">
         <div className="h-1/4 bg-[#0f172a] text-white rounded">
       <h1 className="text-center text-4xl font-bold">About Us</h1>
       </div>
-      <div className="h-full text-justify  h-full mt-6">
+      <div className="h-full w-[1180px] mx-auto text-justify  h-full mt-6">
 <p className="text-2xl">Welcome to Disaster Management System, your reliable partner in times of crisis. Our mission is to empower individuals, communities, and organizations to effectively prepare for, respond to, and recover from disasters.</p>
 
 <h1 className="text-blue-500 text-3xl font-medium">Who We Are</h1>
