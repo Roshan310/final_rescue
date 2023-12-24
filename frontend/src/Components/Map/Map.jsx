@@ -4,10 +4,11 @@ import "leaflet/dist/leaflet.css";
 const Map = ({ latitude, longitude }) => {
   return (
     <MapContainer
+      className="text-center"
       center={{ lat: latitude, lng: longitude }}
       zoom={13}
       scrollWheelZoom={false}
-      style={{ height: "50vh", width: "50%", zIndex: "1" }}
+      style={{ height: "50vh", width: "50%" , zIndex:"-1"}}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

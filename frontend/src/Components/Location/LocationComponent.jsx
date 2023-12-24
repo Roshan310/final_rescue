@@ -22,11 +22,7 @@ const LocationComponent = () => {
   }, []);
 
   return (
-    <div>
-      Latitude: {latitude}
-      <br />
-      Longitude: {longitude}
-      <br />
+    <div className="flex justify-center items-center">
       {latitude && longitude && (
         <Map latitude={latitude} longitude={longitude} />
       )}
